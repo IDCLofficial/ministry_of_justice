@@ -24,3 +24,135 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* === Animations (CSS utilities) === */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 1000ms ease-out both;
+}
+
+.animate-fade-in {
+  animation: fade-in 1000ms ease-out both;
+}
+
+.animate-slide-right {
+  animation: slide-in-right 1000ms ease-out both;
+}
+
+.animate-slide-left {
+  animation: slide-in-left 1000ms ease-out both;
+}
+
+/* Delay helpers */
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-400 { animation-delay: 400ms; }
+.animate-delay-500 { animation-delay: 500ms; }
+.animate-delay-600 { animation-delay: 600ms; }
+.animate-delay-800 { animation-delay: 800ms; }
+.animate-delay-1000 { animation-delay: 1000ms; }
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-in,
+  .animate-slide-right {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* === Scroll reveal helpers === */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+}
+.reveal.is-visible {
+  animation: fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Pop-in variant for cards */
+.reveal-pop {
+  opacity: 0;
+  transform: translateY(8px) scale(0.96);
+}
+.reveal-pop.is-visible {
+  animation: pop-in 700ms ease-out both;
+}
+
+/* Slide-in variants for opposing columns */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-24px);
+}
+.reveal-left.is-visible {
+  animation: slide-in-left 1000ms ease-out both;
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(24px);
+}
+.reveal-right.is-visible {
+  animation: slide-in-right 1000ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .reveal.is-visible { animation: none !important; }
+  .reveal-left, .reveal-right { opacity: 1 !important; transform: none !important; }
+  .reveal-left.is-visible, .reveal-right.is-visible { animation: none !important; }
+  .reveal-pop { opacity: 1 !important; transform: none !important; filter: none !important; }
+  .reveal-pop.is-visible { animation: none !important; }
+}

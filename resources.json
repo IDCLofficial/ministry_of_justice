@@ -1,0 +1,279 @@
+{
+  "imo_state_ministry_of_justice_website": {
+    "home": {
+      "header": {
+        "logo_title": "Imo state Ministry of Justice",
+        "main_navigation": [
+          "Home",
+          "About",
+          "Agencies (Advisory Council on Prerogative of Mercy, ESJRT, AGPT, CRMC)",
+          "Departments (Public Prosecution, Civil Litigation, Legal Drafting, Law Reporting, Administration & Supply, Planning, Research & Statistics, Finance/Accounts, Library, Appeals)",
+          "Laws",
+          "Projects (Projects, Events, Gallery)",
+          "eMoJ",
+          "Contact"
+        ]
+      },
+      "hero_banner": {
+        "images": [
+          "Physical structure of the ministry",
+          "Lady justice as banner background",
+          "Attorney general image"
+        ],
+        "mission": "To ensure access to justice, uphold the rule of law, and promote fairness and equity for all citizens of Imo State through effective legal services and good governance.",
+        "vision": "To be a leading Ministry recognized for its commitment to justice, fairness, and the rule of law, ensuring a safe and equitable society for all citizens of Imo State.",
+        "features": [
+          "Attorney General's message",
+          "Learn More link",
+          "Key achievements by the ministry of justice",
+          "Inspirational quote",
+          "Quick access to downloadable Imo State laws (PDF)"
+        ]
+      },
+      "commissioner_introduction": {
+        "description": "Profile highlight with a mission statement from commissioner, emphasizing justice, governance, and service"
+      },
+      "featured_initiatives": {
+        "initiatives": [
+          {
+            "name": "Committee on Land Disputes",
+            "description": "resolving title reviews and compensations"
+          },
+          {
+            "name": "Justice Sector Technological Transformation",
+            "description": "digitizing justice services"
+          },
+          {
+            "name": "Strategic Laws & Regulations",
+            "description": "focus on Electricity Law 2023"
+          },
+          {
+            "name": "Speedy & Efficient Judicial System",
+            "description": "enhancing dispute resolution"
+          }
+        ]
+      },
+      "departments_overview": {
+        "departments": [
+          "Public Prosecution",
+          "Civil Litigation",
+          "Legal Drafting",
+          "Law Reporting",
+          "Administration & Supply",
+          "Planning, Research & Statistics",
+          "Finance/Accounts",
+          "Library",
+          "Appeals"
+        ],
+        "note": "Each department should have a brief summary of functions"
+      },
+      "footer": {
+        "address": "Block 10, Imo State Secretariat, Port Harcourt Road, PMB 1145, Port Harcourt Road, Owerri, Imo",
+        "phone": "-----",
+        "email": "--------",
+        "copyright": "©2026 IMO All Rights Reserved"
+      }
+    },
+    "about_us": {
+      "header": "maintain the same header across all pages",
+      "page_structure": {
+        "title": "About Us",
+        "breadcrumb": "Bold 'About Us' title with submenu that help user to navigate back to the home or previous page https://www.moj.en.gov.ng/about"
+      },
+      "visual_elements": {
+        "description": "Includes relevant visual graphics, such as the Ministry building, themed icons below the banner section"
+      },
+      "leadership": {
+        "attorney_general": "commissioner",
+        "solicitor_general": "Permanent Secretary"
+      },
+      "team": {
+        "description": "List of directors and heads across various units (with names and positions), each with an accompanying image placeholder placed on cards"
+      },
+      "faq": {
+        "highlighted_questions": [
+          "How Do I File a Complaint",
+          "How does the state prosecute?",
+          "Are Petitions filed at local courts?"
+        ]
+      },
+      "footer": "Consistent footer across all the pages"
+    },
+    "commissioner": {
+      "name": "Not Available"
+    },
+    "departments_and_agencies": {
+      "departments": [
+        "Public Prosecution",
+        "Civil Litigation",
+        "Legal Drafting/Parliamentary Counsel",
+        "Administration & Finance",
+        "Planning & Research",
+        "Citizens' Rights / ADR"
+      ],
+      "agencies": [
+        "Directorate of Public Prosecutions",
+        "the Legal Aid Council",
+        "the Directorate of Citizens' Rights",
+        "the Directorate of Citizens' Rights",
+        "the Office of the Public Defender"
+      ]
+    },
+    "services": {
+      "header": "consistent across all pages",
+      "banner": "consistent across all pages",
+      "legal_services": [
+        "Prosecution of criminal cases in all courts",
+        "Issuance of legal advice on criminal investigations",
+        "Representation of the state in civil and criminal litigation",
+        "Drafting of executive bills and legislative instruments",
+        "Drafting and vetting of contracts, agreements, and MoUs",
+        "Law review and legal reform initiatives",
+        "Legislative support to the House of Assembly"
+      ],
+      "advisory_services": [
+        "Legal advisory services to government MDAs",
+        "Legal vetting of procurement contracts and government policies",
+        "Interpretation of laws, court decisions, and regulatory frameworks"
+      ],
+      "access_to_justice": [
+        "Provision of legal aid to indigent citizens",
+        "Public legal education and rights awareness campaigns",
+        "Alternative Dispute Resolution (ADR) - Mediation, Conciliation, Arbitration",
+        "Human rights desk - handling abuse cases and complaints",
+        "Jail/prison decongestion programs and inmate reviews"
+      ],
+      "estate_trustee_services": [
+        "Administration of estates and trusts",
+        "Issuance of letters of administration and probate services",
+        "Management of public guardianship and trusteeship roles"
+      ],
+      "law_reporting": [
+        "Compilation and publication of law reports",
+        "Maintenance of legal documentation and archives"
+      ],
+      "footer": "consistent across all pages"
+    },
+    "projects": {
+      "status": "N/A"
+    },
+    "news": {
+      "homepage_integration": "Include the News headline on the home page with a brief introduction and link to the main page",
+      "page_structure": {
+        "title_breadcrumb": "include title and breadcrumb on the banner to ensure clarity"
+      },
+      "consistency": "Header, Banner and footer: consistent across all pages"
+    },
+    "events": {
+      "overview": "Events hosted or facilitated by the Ministry are key moments of engagement, collaboration, and progress. To keep stakeholders informed, the homepage will feature the latest events with brief descriptions and links to full details.",
+      "homepage_integration": {
+        "display": "Display event headlines in a dedicated section on the homepage",
+        "format": "Each headline will be accompanied by a short teaser (one to two lines) and a 'Read More' link"
+      },
+      "event_page_details": {
+        "components": [
+          "Title",
+          "Date and Time",
+          "Location",
+          "Event Description",
+          "Relevant Images or Flyers",
+          "RSVP or Registration Links (if applicable)"
+        ]
+      },
+      "navigation_features": {
+        "breadcrumbs": "Clear breadcrumb trail (e.g., Home > Events > [Event Name])",
+        "consistency": "Header, Banner, and Footer: Uniform layout with the rest of the site for consistency and ease of navigation"
+      }
+    },
+    "media": {
+      "main_access": {
+        "menu_items": [
+          "Press Releases",
+          "Gallery (Photos and Videos)"
+        ]
+      },
+      "press_releases": {
+        "content_format": "Reverse-chronological listing",
+        "entry_components": [
+          "Title",
+          "Date (e.g., July fifteenth, two thousand and twenty-five)",
+          "Author (e.g., Media Desk or Administrator)",
+          "Brief Summary",
+          "Read More link for full article"
+        ],
+        "topics_covered": [
+          "Policy updates",
+          "Ministry initiatives",
+          "Official statements",
+          "Engagements and collaborations"
+        ]
+      },
+      "user_experience_enhancements": {
+        "sidebar_links": [
+          "Laws and Regulations",
+          "Publications",
+          "Photo Gallery",
+          "Events"
+        ],
+        "features": "Clear, readable typography and date stamps"
+      },
+      "gallery": {
+        "photo_documentation": {
+          "layout": "Chronological layout of events",
+          "entry_components": [
+            "Thumbnail image",
+            "Caption describing the event",
+            "Option to view in full-screen or slideshow"
+          ]
+        },
+        "categorization": [
+          "Stakeholder Engagements",
+          "Mining Site Visits",
+          "Industrial Conferences",
+          "Community Outreach"
+        ],
+        "videos_section": {
+          "current_status": "Currently listed as 'Media Clips' with placeholder content",
+          "future_plans": "Space allocated for future video embeds (e.g., YouTube, Vimeo)"
+        }
+      },
+      "navigation_notes": {
+        "limitations": "No advanced search or filters yet",
+        "consistency": "Consistent sidebar navigation and footer for ease of browsing"
+      }
+    },
+    "contact_us": {
+      "invitation": "Have any questions or enquiries? We'd be glad to hear from you. Please feel free to reach out to us.",
+      "location": {
+        "address": "Block Ten, Imo State Secretariat, Port Harcourt Road, PMB One One Four Five, Owerri, Imo State, Nigeria",
+        "map_integration": "An embedded map is displayed across all pages to help visitors locate the Ministry easily"
+      },
+      "phone_contact": {
+        "availability": "available Tuesdays, 1:00 PM – 3:00 PM",
+        "numbers": [
+          "+234 Seven Zero Four Seven Two Five Four Seven Two Eight",
+          "+234 Eight Zero Three Five Seven Four Four Eight One Zero"
+        ],
+        "sms_whatsapp": "+234 Eight Zero Eight Four Four Six One Eight Two Six (click-to-chat enabled)"
+      },
+      "email": {
+        "general_enquiries": "contact@moj.jg.gov.ng",
+        "official_correspondence": "ministryofjustice@enugustate.gov.ng"
+      },
+      "contact_form": {
+        "fields": [
+          "Full Name",
+          "Email Address",
+          "Your Message"
+        ],
+        "disclaimer": "By clicking SEND, you agree to our Terms of Service and Privacy Policy"
+      },
+      "footer_integration": {
+        "repetition": "The above contact details are repeated in the footer on every page of the website under 'Contact Us'",
+        "social_media": ["Facebook", "Twitter", "LinkedIn"],
+        "quick_links": ["Home", "Press Release", "Departments", "Units", "Zonal Offices", "About Us"],
+        "copyright": "© 2025 Imo State Ministry of Justice. All rights reserved"
+      }
+    }
+  }
+}

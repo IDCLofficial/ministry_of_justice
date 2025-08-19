@@ -1,103 +1,253 @@
-import Image from "next/image";
+'use client';
+import { useEffect } from 'react';
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import AboutSplit from '@/components/AboutSplit';
+import DepartmentsSplit from '@/components/DepartmentsSplit';
+import AboutCommissioner from '@/components/AboutCommissioner';
+import LatestNews from '@/components/LatestNews';
+import FeaturedPartners from '@/components/FeaturedPartners';
+import CtaGradientBlock from '@/components/CtaGradientBlock';
+import Footer from '@/components/Footer'
+// Hero data
+const heroData = {
+  title: 'Imo State Ministry of Justice',
+  subtitle:
+    'To ensure access to justice, uphold the rule of law, and promote fairness and equity for all citizens of Imo State through effective legal services and good governance.',
+  cta: {
+    text: 'Learn More',
+    link: '/about',
+  },
+  stats: [],
+  bgImage: '/images/hero-education.jpg',
+} as const;
+
+// Featured Partners section
+const featuredPartnersData = {
+  title: 'Featured Partners',
+  partners: [
+    { name: 'Partner 1', logoText: 'Logo' },
+    { name: 'Partner 2', logoText: 'Logo' },
+    { name: 'Partner 3', logoText: 'Logo' },
+    { name: 'Partner 4', logoText: 'Logo' },
+    { name: 'Partner 5', logoText: 'Logo' },
+    { name: 'Partner 6', logoText: 'Logo' },
+  ],
+} as const;
+
+// CTA gradient block
+const ctaGradientData = {
+  heading: 'Partner With Us To Uphold Justice In Imo',
+  subtext:
+    'Support our mission to strengthen the rule of law and ensure equitable access to justice for all citizens of Imo State.',
+  cta: { text: 'Contact Us', href: '#contact' },
+} as const;
+
+// About Commissioner section (split)
+const aboutCommissionerData = {
+  heading: "Message from the Commissioner",
+  body:
+    "Our commitment is to uphold the rule of law, protect citizens' rights, and ensure a safe and equitable society for all.",
+  cta: { text: 'Learn More', href: '/team' },
+  imageSrc: '/No-Image-Placeholder.svg',
+} as const;
+
+// Latest News section
+const latestNewsData = {
+  title: 'News & Press Releases',
+  subtitle:
+    'Policy updates, ministry initiatives, official statements, engagements and collaborations from the Ministry of Justice.',
+  posts: [
+    {
+      id: 1,
+      imageSrc: '/images/news-1.jpg',
+      title: "Caregivers Are Essential Workers. It's Time We Recognize Them As Such",
+      date: '20th July',
+      tag: 'Latest',
+      excerpt:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...',
+      href: '#',
+    },
+    {
+      id: 2,
+      imageSrc: '/images/news-2.jpg',
+      title: "Caregivers Are Essential Workers. It's Time We Recognize Them As Such",
+      date: '20th July',
+      tag: 'Latest',
+      excerpt:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...',
+      href: '#',
+    },
+    {
+      id: 3,
+      imageSrc: '/images/news-3.jpg',
+      title: "Caregivers Are Essential Workers. It's Time We Recognize Them As Such",
+      date: '20th July',
+      tag: 'Latest',
+      excerpt:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...',
+      href: '#',
+    },
+  ],
+} as const;
+
+// About section (split) - from Figma
+const aboutSplitData = {
+  heading: 'About Us',
+  body:
+    'The Imo State Ministry of Justice ensures access to justice and promotes fairness for all citizens. We provide effective legal services, strengthen the rule of law, and support good governance across the state.',
+  cta: { text: 'Learn More', href: '/about' },
+  imageSrc: '/imo_judiciary.jpeg',
+  hoverImageSrc: '/about_us_img-2.jpeg',
+} as const;
+
+// Departments section (split) - from Figma
+const departmentsSplitData = {
+  heading: 'Our Departments & Their\nFunctions',
+  description:
+    'Key departments advancing justice, fairness, and good governance across Imo State.',
+  items: [
+    {
+      title: 'Public Prosecution',
+      description:
+        'Handles criminal prosecutions on behalf of the state and issues legal advice on investigations.',
+    },
+    {
+      title: 'Civil Litigation',
+      description:
+        'Represents the state in civil matters and protects government legal interests in court.',
+    },
+    {
+      title: 'Legal Drafting',
+      description:
+        'Drafts executive bills, legislative instruments, and provides legislative support.',
+    },
+    {
+      title: 'Law Reporting',
+      description:
+        'Compiles and publishes law reports and maintains legal documentation and archives.',
+    },
+  ],
+  cta: { text: 'See All Departments', href: '#departments' },
+  imageSrc: '/image_from_justice_oputa_high_court.jpg',
+} as const;
+
+// Footer is now self-contained; no footerData needed
+
+// Language options
+const languages = [
+  { code: 'en', name: 'English' },
+  { code: 'fr', name: 'Français' },
+  { code: 'es', name: 'Español' },
+];
+const currentLanguage = 'en';
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  // Navbar data
+  // Scroll-triggered animations: reveal on enter
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const elements = Array.from(
+      document.querySelectorAll<HTMLElement>('.reveal, .reveal-left, .reveal-right, .reveal-pop')
+    );
+    if (elements.length === 0) return;
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      elements.forEach((el) => el.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -10% 0px' }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Navbar
+        ctaText="Get Started" 
+        ctaLink="/get-started"
+        languages={languages}
+        currentLanguage={currentLanguage}
+      />
+      
+      <main className="flex-grow">
+        <div className="reveal animate-delay-100">
+          <Hero 
+            title={heroData.title}
+            subtitle={heroData.subtitle}
+            cta={heroData.cta}
+            stats={heroData.stats}
+            bgImage={heroData.bgImage}
+          />
+        </div>
+
+        <div className="reveal animate-delay-200">
+          <AboutSplit
+            heading={aboutSplitData.heading}
+            body={aboutSplitData.body}
+            cta={aboutSplitData.cta}
+            imageSrc={aboutSplitData.imageSrc}
+            hoverImageSrc={aboutSplitData.hoverImageSrc}
+          />
+        </div>
+
+        <div className="reveal animate-delay-300">
+          <DepartmentsSplit
+            heading={departmentsSplitData.heading}
+            description={departmentsSplitData.description}
+            items={departmentsSplitData.items}
+            cta={departmentsSplitData.cta}
+            imageSrc={departmentsSplitData.imageSrc}
+          />
+        </div>
+        
+        <div className="reveal animate-delay-400">
+          <AboutCommissioner
+            heading={aboutCommissionerData.heading}
+            body={aboutCommissionerData.body}
+            cta={aboutCommissionerData.cta}
+            imageSrc={aboutCommissionerData.imageSrc}
+          />
+        </div>
+
+        <div className="reveal animate-delay-500">
+          <LatestNews
+            title={latestNewsData.title}
+            subtitle={latestNewsData.subtitle}
+            posts={latestNewsData.posts}
+          />
+        </div>
+        
+        <div className="reveal animate-delay-600">
+          <FeaturedPartners
+            title={featuredPartnersData.title}
+            partners={featuredPartnersData.partners}
+          />
+        </div>
+
+        <div className="reveal animate-delay-800">
+          <CtaGradientBlock
+            heading={ctaGradientData.heading}
+            subtext={ctaGradientData.subtext}
+            cta={ctaGradientData.cta}
+          />
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      
+      <Footer />
     </div>
   );
 }
