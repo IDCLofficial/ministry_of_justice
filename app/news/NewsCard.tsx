@@ -2,7 +2,6 @@ import React from 'react';
 import { NewsPost } from '@/lib/types';
 
 export default function NewsCard({ item }: { item: NewsPost }) {
-  console.log(item)
   return (
     <article className="rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm">
       <div className="aspect-[16/10] w-full overflow-hidden">

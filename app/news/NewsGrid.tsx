@@ -1,11 +1,9 @@
+"use client";
 import React from 'react';
 import NewsCard from './NewsCard';
-import { getNewsBycategory } from './news';
 import { NewsPost } from '@/lib/types';
 
-export default async function NewsGrid({ query }: { query: string}) {
-  const items = await getNewsBycategory(query);
-  console.log(items)
+export default function NewsGrid({ query, items }: { query: string, items: NewsPost[]}) {
   return (
     <section className="bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">

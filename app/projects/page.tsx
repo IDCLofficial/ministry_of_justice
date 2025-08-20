@@ -6,13 +6,14 @@ import { contentfulService } from '@/lib/contentful';
 import getProjects from './projects';
 import { Project } from '@/lib/types';
 import { ProjectsSection } from './ProjectsSection';
+import ProjectsGrid from './ProjectsGrid';
 
 type Stat = { value: string; label: string };
 const stats: Stat[] = [
-  { value: '6', label: 'Core Departments' },
-  { value: '7', label: 'Legal Services' },
-  { value: '5', label: 'Access to Justice Programs' },
-  { value: '2', label: 'Law Reporting Functions' },
+  { value: '4', label: 'Featured Initiatives' }, // resources.home.featured_initiatives.initiatives (4)
+  { value: '9', label: 'Core Departments' }, // resources.home.departments_overview.departments (9)
+  { value: '7', label: 'Legal Services' }, // resources.services.legal_services (7)
+  { value: '6', label: 'Event Page Components' }, // resources.events.event_page_details.components (6)
 ];
 
 // const projects: Project[] = [
@@ -73,8 +74,8 @@ const currentLanguage = 'en';
 const cta = {
   heading: 'Partner With Us To Uphold Justice In Imo',
   subtext:
-    'Support our mission to strengthen the rule of law and ensure equitable access to justice for all citizens of Imo State.',
-  cta: { text: 'Contact Us', href: '#contact' },
+    'To ensure access to justice, uphold the rule of law, and promote fairness and equity for all citizens of Imo State through effective legal services and good governance.',
+  cta: { text: 'Contact Us', href: '/contact' },
 } as const;
 
 const languages = [
@@ -130,12 +131,12 @@ export default async function ProjectsPage() {
       />
       <main className="flex-grow">
         <HeroSection
-          title="Justice Programs & Strategic Initiatives"
-          subtitle="Our initiatives focus on access to justice, legal reform, digitization of services, and efficient dispute resolution across Imo State."
+          title="Explore Our Projects"
+          subtitle="Showcasing ministry initiatives and engagements — justice sector transformation, strategic laws and policies, stakeholder collaborations, and public-facing events."
         >
           <StatsSection stats={stats} />
         </HeroSection>
-        <ProjectsSection projects={projects as unknown as Project[]} />
+        <ProjectsGrid projects={projects as unknown as Project[]} />
       </main>
       <CtaGradientBlock 
         heading={cta.heading} 

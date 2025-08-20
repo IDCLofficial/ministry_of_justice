@@ -69,8 +69,8 @@ const currentLanguage = 'en';
 const cta = {
   heading: 'Partner With Us To Uphold Justice In Imo',
   subtext:
-    'Support our mission to strengthen the rule of law and ensure equitable access to justice for all citizens of Imo State.',
-  cta: { text: 'Contact Us', href: '#contact' },
+    'To ensure access to justice, uphold the rule of law, and promote fairness and equity for all citizens of Imo State through effective legal services and good governance.',
+  cta: { text: 'Contact Us', href: '/contact' },
 } as const;
 
 export default async function NewsPage() {
@@ -86,7 +86,7 @@ export default async function NewsPage() {
       />
 
       <main className="flex-grow">
-        <NewsHero title={"News & Press Releases"} />
+        <NewsHero title={"Justice News & Press Releases"} />
         <Suspense fallback={<div>Loading...</div>}>
           <NewsClient categories={categories} />
         </Suspense>

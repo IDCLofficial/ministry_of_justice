@@ -19,9 +19,9 @@ export default async function NewsSlugPage({ params }: { params: Promise<{ slug:
 
   // Mock detail. In real use, fetch by `params.slug`
   const cta = {
-    heading: 'Partner With Us To Uphold Justice In Imo',
+    heading: 'Partner With Us To Deliver Decent Housing In Imo',
     subtext:
-      'Support our mission to strengthen the rule of law and ensure equitable access to justice for all citizens of Imo State.',
+      'Support our mission to provide affordable, inclusive, and sustainable housing for all residents of Imo State.',
     cta: { text: 'Contact Us', href: '/contact' },
   } as const;
 
@@ -38,7 +38,7 @@ export default async function NewsSlugPage({ params }: { params: Promise<{ slug:
       <main className="flex-grow">
         {detail ? (
           <>
-            <NewsDetailHero title={`${detail.fields.title}`} date={`${detail.sys.createdAt}`} tag={`${detail.fields.category.fields.category_name}`} image={`http:${detail.fields.featuredImage?.fields.file.url}`} />
+            <NewsDetailHero title={`${detail.fields.title}`} date={`${detail.sys.createdAt}`} tag={`${detail.fields.category.fields.category_name}`} image={`https:${detail.fields.featuredImage?.fields.file.url}`} />
             <NewsBody post={detail} />
           </>
         ) : (

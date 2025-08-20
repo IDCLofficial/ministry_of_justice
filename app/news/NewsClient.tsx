@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import NewsTabs from './NewsTabs';
 import NewsGrid from './NewsGrid';
-import type { Category } from '@/lib/types';
+import type { Category, NewsPost } from '@/lib/types';
+import { getNewsBycategory } from './news';
 
 export default function NewsClient({
   categories,
@@ -11,19 +12,36 @@ export default function NewsClient({
     categories: Category[];
 }) {
   const [active, setActive] = useState<Category>(categories[0]);
+  const [items, setItems] = useState<NewsPost[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
   const searchParams = useSearchParams();
   const categoryQuery = searchParams.get('category');
   const query = categoryQuery
-  // Could sync active with query if desired
-  // console.log({ categoryQuery });
 
-  // TODO: once news items come from CMS with category associations,
-  // use active to filter. For now, show all.
+  useEffect(() => {
+    let ignore = false;
+    (async () => {
+      try {
+        setLoading(true);
+        const data = await getNewsBycategory(query || '');
+        if (!ignore) setItems(data || []);
+      } catch (e) {
+        if (!ignore) setItems([]);
+      } finally {
+        if (!ignore) setLoading(false);
+      }
+    })();
+    return () => {
+      ignore = true;
+    };
+  }, [query]);
+
 
   return (
     <>
-      <NewsTabs categories={categories} onChange={(c)=>setActive(c)} />
-      <NewsGrid query={query || ''} />
+      <NewsTabs query={query || ''} categories={categories} onChange={(c)=>setActive(c)} />
+      <NewsGrid query={query || ''} items={items} />
     </>
   );
 }
+
