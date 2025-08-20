@@ -4,9 +4,9 @@ import {Events} from '@/lib/types';
 export default function EventRow({ item }: { item: Events}) {
   return (
     <div className="py-5 border-b border-slate-200">
-      <div className="flex items-center gap-16 items-center">
+      <div className="flex items-center gap-16">
         <div className="w-[200px] h-[200px] aspect-square rounded-lg overflow-hidden ring-1 ring-slate-200/60">
-          <img src={item.fields.bannerImage?.fields.file.url} alt={item.fields.eventName} className="w-full h-full object-cover" />
+          <img src={`http:${item.fields.bannerImage?.fields.file.url}`} alt={item.fields.eventName} className="w-full h-full object-cover" />
         </div>
 
         <div className='flex flex-col gap-2'>
