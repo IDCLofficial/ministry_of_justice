@@ -1,5 +1,5 @@
 'use client';
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import AboutSplit from '@/components/AboutSplit';
@@ -224,11 +224,12 @@ export default function Home() {
         </div>
 
         <div className="reveal animate-delay-500">
-          <LatestNews
-            title={latestNewsData.title}
-            subtitle={latestNewsData.subtitle}
-            posts={latestNewsData.posts}
-          />
+          <Suspense fallback={<div>Loading...</div>}>
+            <LatestNews
+              title={latestNewsData.title}
+              subtitle={latestNewsData.subtitle}
+            />
+          </Suspense>
         </div>
         
         <div className="reveal animate-delay-600">
