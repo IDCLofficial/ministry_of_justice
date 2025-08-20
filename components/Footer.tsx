@@ -39,21 +39,18 @@ export default function Footer() {
   const columns: FooterColumn[] = [
     { title: 'About', links: [
       { name: 'About Us', href: '/about' },
-      { name: 'Our Team', href: '/team' },
     ]},
     { title: 'Quick Links', links: [
       { name: 'Home', href: '/' },
-      { name: 'Press Release', href: '/news' },
+      { name: 'News', href: '/news' },
       { name: 'Departments', href: '/departments' },
-      { name: 'Units', href: '#' },
-      { name: 'Zonal Offices', href: '#' },
-      { name: 'About Us', href: '/about' },
+      { name: 'Events', href: '/events' },
     ]},
     { title: 'Legal', links: [
-      { name: 'Privacy Policy', href: '/privacy' },
-      { name: 'Terms of Service', href: '/terms' },
-      { name: 'Cookie Policy', href: '/cookies' },
-      { name: 'GDPR', href: '/gdpr' },
+      { name: 'Privacy Policy', href: '/#' },
+      { name: 'Terms of Service', href: '/#' },
+      { name: 'Cookie Policy', href: '/#' },
+      { name: 'GDPR', href: '/#' },
     ]},
   ];
   const socialLinks = [
