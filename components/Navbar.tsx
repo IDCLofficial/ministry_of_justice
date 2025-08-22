@@ -33,7 +33,7 @@ export default function Navbar({ctaText, ctaLink}: NavbarProps) {
       {/* Thin purple top border */}
       <div className="h-1 w-full bg-white " />
       <div className="border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <div className="flex items-center">
