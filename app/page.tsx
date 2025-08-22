@@ -1,5 +1,4 @@
-'use client';
-import { Suspense, useEffect } from 'react';
+import { Suspense } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import AboutSplit from '@/components/AboutSplit';
@@ -9,6 +8,7 @@ import LatestNews from '@/components/LatestNews';
 import FeaturedPartners from '@/components/FeaturedPartners';
 import CtaGradientBlock from '@/components/CtaGradientBlock';
 import Footer from '@/components/Footer'
+import HomeClient from '@/components/HomeClient';
 // Hero data
 const heroData = {
   title: 'Imo State Ministry of Justice',
@@ -145,37 +145,10 @@ const currentLanguage = 'en';
 export default function Home() {
   // Navbar data
   // Scroll-triggered animations: reveal on enter
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const elements = Array.from(
-      document.querySelectorAll<HTMLElement>('.reveal, .reveal-left, .reveal-right, .reveal-pop')
-    );
-    if (elements.length === 0) return;
-
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) {
-      elements.forEach((el) => el.classList.add('is-visible'));
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15, rootMargin: '0px 0px -10% 0px' }
-    );
-
-    elements.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-
   return (
+    
     <div className="min-h-screen flex flex-col">
+      <HomeClient/>
       <Navbar
         ctaText="Get Started" 
         ctaLink="/get-started"
