@@ -14,8 +14,8 @@ export default function ProjectsHero({ title, subtitle, bgImage }: ProjectsHeroP
         </>
       ) : null}
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-        <div className="max-w-3xl">
+      <div className="relative w-full mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        <div className="w-full">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight whitespace-pre">
             {title}
           </h1>

@@ -34,7 +34,7 @@ export default function Hero({
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-          <div className="max-w-3xl">
+          <div className="w-full">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
               {title}
             </h1>
