@@ -128,7 +128,7 @@ const departmentsSplitData = {
         'Compiles and publishes law reports and maintains legal documentation and archives.',
     },
   ],
-  cta: { text: 'See All Departments', href: '#departments' },
+  cta: { text: 'See All Departments', href: '/departments' },
   imageSrc: '/image_from_justice_oputa_high_court.jpg',
 } as const;
 
